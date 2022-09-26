@@ -53,10 +53,6 @@ if [ "${DEPLOY_API_CATALOG_CLI_BOOLEAN}" == true ]; then
     
     echo "############### Installing NodeJS via Node Version Manager on an Ubuntu Machine ###############"
 
-    #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-    #source ~/.bashrc 
-    #nvm list-remote
-
     chmod 755 /vagrant/nvm-install.sh
     /vagrant/nvm-install.sh
 
