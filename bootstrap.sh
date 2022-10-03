@@ -53,8 +53,8 @@ if [ "${DEPLOY_API_CATALOG_CLI_BOOLEAN}" == true ]; then
     
     echo "############### Installing NodeJS via Node Version Manager on an Ubuntu Machine ###############"
 
-    chmod 755 /vagrant/nvm-install.sh
-    /vagrant/nvm-install.sh
+    chmod 755 ./nvm-install.sh
+    ./nvm-install.sh
 
     source ~/.nvm/nvm.sh
 
@@ -86,7 +86,7 @@ if [ "${DEPLOY_KUBERNETES_BOOLEAN}" == true ]; then
 
     sudo apt-get install docker.io -y
     sudo usermod -G docker ubuntu
-    sudo usermod -G docker vagrant
+    # sudo usermod -G docker vagrant
     docker --version
 
 
@@ -107,7 +107,7 @@ if [ "${DEPLOY_KUBERNETES_BOOLEAN}" == true ]; then
     ## Testing creating cluster with port 8081 auto-mapping: (see: https://k3d.io/v5.4.1/usage/exposing_services/)
     ## INFO[0000] portmapping '8081:8081' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy]
     ## To open ports in k3d/docker land after cluster is created, see hack here: https://github.com/k3d-io/k3d/issues/89
-    sudo runuser -l vagrant -c "k3d cluster create ${K8S_CLUSTER_NAME} --k3s-arg '--disable=traefik@server:*' --port '8081:8081@loadbalancer' --port '8082:8082@loadbalancer' --port '8083:8083@loadbalancer' --wait --timeout '300s'"
+    sudo runuser -l ubuntu -c "k3d cluster create ${K8S_CLUSTER_NAME} --k3s-arg '--disable=traefik@server:*' --port '8081:8081@loadbalancer' --port '8082:8082@loadbalancer' --port '8083:8083@loadbalancer' --wait --timeout '300s'"
 
     ## List clusters: 
     k3d cluster list
