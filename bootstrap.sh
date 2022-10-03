@@ -52,7 +52,7 @@ if [ "${DEPLOY_API_CATALOG_CLI_BOOLEAN}" == true ]; then
     echo "*******************************"
     
     echo "############### Installing NodeJS via Node Version Manager on an Ubuntu Machine ###############"
-
+    cd -
     chmod 755 ./nvm-install.sh
     ./nvm-install.sh
 
