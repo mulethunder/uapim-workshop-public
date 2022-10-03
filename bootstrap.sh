@@ -70,7 +70,7 @@ if [ "${DEPLOY_API_CATALOG_CLI_BOOLEAN}" == true ]; then
     # First satisfy API Catalog role in Anypoint Platform for user
     # Satisfy NVP -> Node version 16
 
-    npm install -g api-catalog-cli@latest
+    sudo npm install -g api-catalog-cli@latest
 
 fi
 
