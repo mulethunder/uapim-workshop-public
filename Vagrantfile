@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
   
     #config.vm.provision "ScriptRunAsRoot", type:"shell", path: "Vagrantdata/rootUserBootstrap.sh"
     # Args order: [DEPLOY_API_CATALOG_CLI_BOOLEAN, DEPLOY_KUBERNETES_BOOLEAN, DEPLOY_KUBERNETES_SAMPLE_MICROSERVICES, DEPLOY_FLEX_GATEWAY_BOOLEAN]
-    config.vm.provision "ScriptRunAsVagrantUser", privileged: false, type:"shell", path: "bootstrap.sh", args: "true true true false"    
+    config.vm.provision "ScriptRunAsVagrantUser", privileged: false, type:"shell", path: "bootstrap-vagrant.sh", args: "true true true false"    
     #config.vm.provision "shell", path: "bootstrap.sh"
 
   end
